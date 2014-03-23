@@ -14,7 +14,7 @@
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li><a href="#">LogIn</a></li>
-<li><a href="#">SignUp</a></li>
+<li><a href="<?php echo $SITE_URL . 'signup.php'; ?>">SignUp</a></li>
 </ul>
 </div>
 </div>
