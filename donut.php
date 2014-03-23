@@ -49,7 +49,7 @@ var g = chart.selectAll(".arc")
 
 g.append("path")
     .style("fill", function(d) { return color(d.data.name); })
-    .transition().delay(function(d, i) { return 0; }).duration(5000)
+    .transition().delay(function(d, i) { return 0; }).duration(3000)
     .attrTween('d', function(d) {
         var i = d3.interpolate(d.startAngle+0.1, d.endAngle);
         return function(t) {
