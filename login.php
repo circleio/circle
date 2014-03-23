@@ -33,7 +33,7 @@ include 'header.php';
                         </div>
                         <div class="form-group">
                             <div class="col-lg-9 col-lg-offset-3">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">LogIn</button>
                             </div>
                        </div>
                    </fieldset>
