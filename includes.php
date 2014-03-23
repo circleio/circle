@@ -1,5 +1,5 @@
 <?php
-    $SITE_URL = 'http://' . $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI];
+    $BASE_URL = 'http://' . $_SERVER[HTTP_HOST];
 ?>
 <link rel="stylesheet" href="static/css/bootstrap.css" type="text/css">
 <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css">

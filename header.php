@@ -5,7 +5,7 @@
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
-<a class="navbar-brand" href="<?php echo $SITE_URL; ?>">Circle</a>
+<a class="navbar-brand" href="<?php echo $BASE_URL; ?>">Circle</a>
 </div>
 <div class="navbar-collapse collapse navbar-responsive-collapse">
 <ul class="nav navbar-nav">
@@ -13,8 +13,8 @@
 <li><a href="#">Link</a></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
-<li><a href="#">LogIn</a></li>
-<li><a href="<?php echo $SITE_URL . 'signup.php'; ?>">SignUp</a></li>
+<li><a href="<?php echo $BASE_URL . '/login.php'; ?>">LogIn</a></li>
+<li><a href="<?php echo $BASE_URL . '/signup.php'; ?>">SignUp</a></li>
 </ul>
 </div>
 </div>
