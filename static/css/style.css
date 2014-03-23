@@ -1,6 +1,16 @@
 html, body {
     height: 100%;
 }
+.navbar-right {
+    margin-top: 5px;
+}
+.navbar {
+    height: 100px;
+    padding: 25px;
+}
+.clear-top {
+    margin-top: 50px;
+}
 #wrap {
     min-height: 100%;
 }
