@@ -13,8 +13,9 @@
 <li><a href="#">Link</a></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
-<li><a href="<?php echo $BASE_URL . '/login.php'; ?>">LogIn</a></li>
-<li><a href="<?php echo $BASE_URL . '/signup.php'; ?>">SignUp</a></li>
+<li><input type="text" class="form-control" id="username" placeholder="Username"></li>
+<li><input type="password" class="form-control" id="password" placeholder="Password"></li>
+<li><button type="submit" class="btn btn-link">LogIn</button></li>
 <li>&nbsp;&nbsp;&nbsp;</li>
 </ul>
 </div>

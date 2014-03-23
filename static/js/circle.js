@@ -1,14 +1,3 @@
-<title>Circle</title>
-<?php
-include 'includes.php';
-include 'header.php';
-?>
-<div id="wrap">
-    <div id="main" class="container clear-top">
-    </div>
-</div>
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script>
 (function(){
 var data = [ {name: "one", value: 1000},
     {name: "two", value:  1000},
@@ -18,7 +7,7 @@ var margin = {top: 20, right: 20, bottom: 20, left: 20};
 width = 600 - margin.left - margin.right;
 height = width - margin.top - margin.bottom;
 
-var chart = d3.select("#main")
+var chart = d3.select("#circle-container")
     .append('svg')
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -58,7 +47,3 @@ g.append("path")
         }
     });
 })();
-</script>
-<?php
-include 'footer.php';
-?>
