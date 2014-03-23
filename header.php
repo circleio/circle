@@ -15,6 +15,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li><a href="<?php echo $BASE_URL . '/login.php'; ?>">LogIn</a></li>
 <li><a href="<?php echo $BASE_URL . '/signup.php'; ?>">SignUp</a></li>
+<li>&nbsp;&nbsp;&nbsp;</li>
 </ul>
 </div>
 </div>
