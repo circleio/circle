@@ -4,7 +4,7 @@ var data = [ {name: "one", value: 1000},
     {name: "three", value:  1000}, ];
 
 var margin = {top: 20, right: 20, bottom: 20, left: 20};
-width = 600 - margin.left - margin.right;
+width = (window.innerWidth*3/8) - margin.left - margin.right;
 height = width - margin.top - margin.bottom;
 
 var chart = d3.select("#circle-container")
