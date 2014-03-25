@@ -1,3 +1,12 @@
+<title>Circle</title>
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+        header('Location: index.php');
+}
+include 'includes.php';
+include 'header.php';
+?>
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript">
@@ -53,14 +62,19 @@ $(window).ready(function () {
             }
             for (var i = 0; i < feeds.entries.length; i++) {
                 var entry = feeds.entries[i];
-                $('#results').append('<a href="'+entry.link+'"><strong>'+entry.title+'</strong><br><em>'+entry.publishedDate+'</em></a><br>'+entry.contentSnippet+'</a><hr>');
+                $('#main').append('<section><div><img src="./static/images/askfm.png" style="height: 30px;"></div><div><a><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</a><br><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a><hr></div></section>');
             }
         }, 10);
 
 });
 </script>
+<div id="wrap">
+    <div id="main" class="container clear-top">
+    </div>
+</div>
 <head>
 </head>
-<div id=content>
-</div>
 <div id="results"></div>
+<?php
+include 'footer.php';
+?>
