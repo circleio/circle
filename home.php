@@ -11,8 +11,6 @@ include 'header.php';
     <div id="main" class="container clear-top">
     </div>
 </div>
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="static/js/circle.js"></script>
 <?php
 include 'footer.php';
 ?>
