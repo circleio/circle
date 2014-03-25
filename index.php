@@ -11,9 +11,6 @@ include 'header.php';
     <div id="main" class="container clear-top">
        <div class="row">
            <div class="col-lg-6" id="circle-container">
-		<div style="position:absolute; z-index: 2; top:300px; left:50px; border:1px solid black; border-radius:25px; overflow:hidden;"> <img src="static/images/facebook.png" style="height: 50px;"> </img> </div>
-		<div style="position:absolute; z-index: 2; top:20px; left:320px; border:1px solid black; border-radius:25px; overflow:hidden;"> <img src="static/images/twitter.png" style="height: 50px;"> </img> </div>
-		<div style="position:absolute; z-index: 2; top: 370px; left:370px; border:1px solid black; border-radius:25px; overflow:hidden;"> <img src="static/images/askfm.png" style="height: 50px;"> </img> </div>
 	   </div>
 	   <div class="col-lg-1"></div>
 	   <div class="col-lg-5">

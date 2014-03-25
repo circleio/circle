@@ -47,3 +47,18 @@ g.append("path")
         }
     });
 })();
+
+var widthOfCircleContainer = parseInt(document.getElementsByTagName("svg")[0].getAttribute("width"));
+var heightOfCircleContainer = parseInt(document.getElementsByTagName("svg")[0].getAttribute("height"));
+
+function addImagesToCircle() {
+
+	var string = "<div style=\"position:absolute; z-index: 2; top:"+(300*heightOfCircleContainer/473)+"px; left:"+(50*widthOfCircleContainer/513)+"px; border:1px solid black; border-radius:25px; overflow:hidden;\"> <img src=\"static/images/facebook.png\" style=\"height: 50px;\"> </img> </div>  <div style=\"position:absolute; z-index: 2; top:"+(20*heightOfCircleContainer/473)+"px; left:"+(320*widthOfCircleContainer/573)+"px; border:1px solid black; border-radius:25px; overflow:hidden;\"> <img src=\"static/images/twitter.png\" style=\"height: 50px;\"> </img> </div>      <div style=\"position:absolute; z-index: 2; top:"+(370*heightOfCircleContainer/473)+"; left:"+(370*widthOfCircleContainer/513)+"px; border:1px solid black; border-radius:25px; overflow:hidden;\"> <img src=\"static/images/askfm.png\" style=\"height: 50px;\"> </img> </div>";
+
+	document.getElementById("circle-container").innerHTML =  document.getElementById("circle-container").innerHTML + string;
+
+}
+
+window.onload = function() {
+	setTimeout(addImagesToCircle, 3000);
+}
