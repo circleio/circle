@@ -36,23 +36,41 @@ function getUrlParameters(parameter, staticURL, decode){
     });
 })(jQuery);
 
-function fillMain(){
-    number = getUrlParameters("number", "", true);
-    if(number==false)number = 25;
-    url = 'http://ask.fm/feed/profile/'+getUrlParameters("name", "", true)+'.rss';
-    console.log(number);
-    $.jGFeed(url,
+function getAllUrlParameters(object){
+    object.url = 'http://ask.fm/feed/profile/'+getUrlParameters("name", "", true)+'.rss';
+    object.number = getUrlParameters("number", "", true);
+    if(object.number==false)object.number = 25;
+}
+
+
+function fillNth(object, n, where){
+    if(n >= object.feeds.entries.length)return false;
+    entry = object.feeds.entries[n];
+    $('#'+where).append('<div style="padding-top: 10px"><img src="./static/images/askfm.png" align="right" style="height: 30px;"></div><section><div><a href='+"http://"+object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")"))+'><h4>'+object.feeds.title.replace(". Answers", "")+'</h4><h6><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</h6></a><br><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a><hr></div></section>');
+
+}
+
+function fillMain(object){
+    console.log(object);
+    console.log(object.feeds);
+    if(object.feeds == undefined){
+        setTimeout(function(){
+            fillMain(object);
+        }, 100);
+        return;
+    }
+    for (var i = 0; i < object.feeds.entries.length; i++)
+        fillNth(object, i, 'main');
+}
+
+function initializeFeed(object){
+    console.log(object);
+    $.jGFeed(object.url,
             function (feeds) {
-                console.log(JSON.stringify(feeds));
                 if (!feeds) {
                     alert('Trouble getting RSS feed :(');
                         return false;
                         }
-                        for (var i = 0; i < feeds.entries.length; i++) {
-                            var entry = feeds.entries[i];
-                            $('#main').append('<div style="padding-top: 10px"><img src="./static/images/askfm.png" align="right" style="height: 30px;"></div><section><div><a href='+"http://"+feeds.title.substring(feeds.title.indexOf("(")+1, feeds.title.indexOf(")"))+'><h4>'+feeds.title.replace(". Answers", "")+'</h4></a></div><div><a><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</a><br><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a><hr></div></section>');
-                        }
-                        }, number);
-
+                        object.feeds = feeds;
+                        }, object.number);
                     }
-
