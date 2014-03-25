@@ -46,7 +46,7 @@ function getAllUrlParameters(object){
 function fillNth(object, n, where){
     if(n >= object.feeds.entries.length)return false;
     entry = object.feeds.entries[n];
-    $('#'+where).append('<div style="padding-top: 10px"><img src="./static/images/askfm.png" align="right" style="height: 30px;"></div><section><div><a href='+"http://"+object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")"))+'><h4>'+object.feeds.title.replace(". Answers", "")+'</h4><h6><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</h6></a><br><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a><hr></div></section>');
+    $('#'+where).append('<div style="padding-top: 10px"><img src="./static/images/askfm.png" align="right" style="height: 30px;"></div><section><div><a href='+"http://"+object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")"))+'><h4>'+object.feeds.title.replace(". Answers", "")+'</h4><h5><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</h5></a><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a><hr></div></section>');
 
 }
 
