@@ -43,3 +43,9 @@ function logout() {
     xmlhttp.open("GET", logout_url, true);
     xmlhttp.send();
 }
+
+window.onkeydown = function(event) {
+	if(event.keyCode == 13) {
+		login()	
+	}
+}
