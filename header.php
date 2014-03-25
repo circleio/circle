@@ -25,8 +25,10 @@ if($_SESSION['username']) {
 }
 else {
     echo '<li><input type="text" class="form-control" id="login_username" placeholder="Username"></li>' .
+	'<li> &nbsp;&nbsp;&nbsp; </li>'.
         '<li><input type="password" class="form-control" id="login_password" placeholder="Password"></li>' .
-        '<li><button type="submit" class="btn btn-link" onClick="login();">LogIn</button></li>';
+	'<li> &nbsp;&nbsp;&nbsp; </li>'.
+        '<li><button type="submit" class="btn btn-primary" onClick="login();">LogIn</button></li>';
 }
 ?>
 <li>&nbsp;&nbsp;&nbsp;</li>
