@@ -62,7 +62,7 @@ $(window).ready(function () {
             }
             for (var i = 0; i < feeds.entries.length; i++) {
                 var entry = feeds.entries[i];
-                $('#main').append('<section><div><img src="./static/images/askfm.png" style="height: 30px;"></div><div><a><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</a><br><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a><hr></div></section>');
+                $('#main').append('<div style="padding-top: 10px"><img src="./static/images/askfm.png" align="right" style="height: 30px;"></div><section><div><a href='+"http://"+feeds.title.substring(feeds.title.indexOf("(")+1, feeds.title.indexOf(")"))+'><h4>'+feeds.title.replace(". Answers", "")+'</h4></a></div><div><a><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</a><br><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a><hr></div></section>');
             }
         }, 10);
 
