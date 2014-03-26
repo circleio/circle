@@ -9,6 +9,7 @@ include 'dbconnect.php';
 
 mysqli_select_db($connect, $dbname);
 
+
 $result = mysqli_query($connect, "SELECT fb_account from users where username = '$_SESSION[username]';");
 $access_token = mysqli_fetch_assoc($result);
 $access_token = $access_token[fb_account];
@@ -19,7 +20,7 @@ if(!$access_token) {
 	echo "<script> fbConnected = false; </script>";
 } else {
 	echo "We have access token";
-	$result = file_get_contents("http://127.0.0.1/htdocs/api/validate_access_token.php?access_token=".$access_token);
+	$result = file_get_contents($BASE_URL."/api/validate_access_token.php?access_token=".$access_token);
 	$result = json_decode($result);
 	print_r($result);
 }

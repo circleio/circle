@@ -6,4 +6,4 @@ delete:
 	php deletedb.php
 .PHONY: test_api
 test_api:
-	cd tests && php phpunit.phar --bootstrap autoload.php testApi && cd ..
+	php phpunit.phar --bootstrap autoload.php tests/testApi

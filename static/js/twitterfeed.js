@@ -8,7 +8,7 @@ xmlhttp.onreadystatechange=function() {
         var response = JSON.parse(xmlhttp.responseText);
         var html_response = '';
 	for(var i=0;i<response.data.length;i++) {
-            html_response += '<div class="row"><div class="col-lg-1"><img src="static/images/twitter.png" style="margin-top: 20px; width: 50px;"></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><span><a style="color: #fff; font-size: 3em;" href="https://twitter.com/' + response.data[i].screen_name + '">'+ response.data[i].name + '</a></span></div></div><div class="row"><div class="col-lg-12"><span style="font-size: 1.25em;" class="text-primary">' + response.data[i].text + '</span></div></div></div><div class="col-lg-1"></div></div><hr>'
+            html_response += '<div class="row"><div class="col-lg-1"><img src="static/images/twitter.png" style="margin-top: 20px; width: 50px;"></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><span><a style="color: #fff; font-size: 3em;" href="https://twitter.com/' + response.data[i].screen_name + '">'+ response.data[i].name + '</a></span></div></div><div class="row"><div class="col-lg-12"><span style="font-size: 1.25em;" class="text-primary">' + response.data[i].text + '</span></div></div></div><div class="col-lg-1"><div class="row"><div class="col-lg-12"><a href="api/twitter/retweet.php?id=' + response.data[i].id + '"><img src="static/images/twitter_retweet.jpg" style="margin-top: 20px; width: 50px;"></a></div></div></div></div><hr>'
 	}
         $('#main').append(html_response);
     }
