@@ -26,8 +26,10 @@ function login() {
 		}
             }
         }
-	xmlhttp.open("GET", login_url + '?username=' + username.value + '&password=' + password.value, true);
-	xmlhttp.send();
+    var details = "username="+username.value+"&password="+password.value;
+	xmlhttp.open("POST", login_url /*+ '?username=' + username.value + '&password=' + password.value*/, true);
+	//xmlhttp.send();
+    xmlhttp.send(details);
     }
 }
 function logout() {
@@ -46,6 +48,6 @@ function logout() {
 
 window.onkeydown = function(event) {
 	if(event.keyCode == 13) {
-		login()	
+		login();	
 	}
 }
