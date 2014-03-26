@@ -74,7 +74,8 @@ set = setInterval(function() {
 
         function hideLoginButtonFacebook() {
                 document.getElementById("loginbuttonfb").innerHTML = "Connected as "+ json.info.name + "<br>" + "<img src='http://graph.facebook.com/" + json.info.username + "/picture' />" ;
-	}
+		document.getElementById("removeFacebook").setAttribute("style", "display:block;");
+}
 
  
 
@@ -82,6 +83,7 @@ set = setInterval(function() {
 	        var xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+				if(access_token == "" || access_token == undefined) window.location.href += ""
                                 validateAccessToken();
                         }
                 }        
@@ -89,5 +91,13 @@ set = setInterval(function() {
                 xmlhttp.open("GET", "./api/upload_new_token.php?access_token=" + access_token, true);
                 xmlhttp.send();
         }
+
+    function removeFacebook() {
+	FB.logout();
+	access_token = ""
+	uploadToServer();
+    }
+
+
 
     </script>
