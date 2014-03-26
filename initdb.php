@@ -18,6 +18,6 @@
                        fb_account VARCHAR(300) DEFAULT null,
                        twitter_account VARCHAR(30) DEFAULT null);";
     mysqli_query($connect, $users_table) or die("cannot create table");
-    $add_admin = "INSERT INTO users VALUES(1, 'admin', 'admin', 'admin@example.com', 'admin', md5('admin'), 1, 0, null, null);";
+    $add_admin = "INSERT INTO users VALUES(1, 'admin', 'admin', 'admin@example.com', 'admin', md5('admin'), 1, 0, 'CAAFZBQCF7XBUBAOAGdSG95TYaRgBZC0cYv6suGam2hAauzXsuezXYEka0aKH4iZBSlX6T8aZCNY1OjF13O0bFZC6HfP7f9rxkxUpnKS0mZBLPwylZBmKdFhCnm79VfC9AkErKGTbNEnPkLylbz9UnSZAl1DA30Uz66PbYvF5jtbvbyfEmHRMg6Gc', null);";
     mysqli_query($connect, $add_admin) or die("cannot add admin");
 ?>
