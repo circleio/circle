@@ -2,7 +2,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])) {
-        header('Location: index.php');
+        //header('Location: index.php');
 }
 include 'includes.php';
 include 'header.php';
@@ -29,31 +29,13 @@ window.onload = function(){
         objects[i].where = 'main';
         initializeFeed(objects[i]);
     }
-checkFeedStatus();
-    //for(i=0;i<people.length;i++)
-        //fillMain(objects[i]);
-}
-function fillPeople(){
-	for(i=0;i<people.length;i++)console.log(objects[i]);
-for(i=0;i<people.length*25;i++){
-	//console.log(i%people.length, Math.floor(i/people.length))
-	fillNth(objects[i%people.length], Math.floor(i/people.length), objects[i%people.length].where);
-	}
-}
-function checkFeedStatus(){
-    for(i=0;i<people.length;i++)
-        if(objects[i].feeds==undefined){
-            setTimeout(function(){
-                checkFeedStatus();
-            }, 100);
-            return;
-        }
-    fillPeople();
+    //check feed status will also fill into the location as specified by the objects.
+    checkFeedStatus(people, objects);
 }
 </script>
 <div id="wrap">
     <div id="main" class="container clear-top">
-    </div>
+    </div>  
 </div>
 <head>
 </head>

@@ -73,11 +73,29 @@ function fillMain(object){
 function initializeFeed(object){
     console.log(object);
     $.jGFeed(object.url,
-            function (feeds) {
-                if (!feeds) {
-                    alert('Trouble getting RSS feed :(');
-                        return false;
-                        }
-                        object.feeds = feeds;
-                        }, object.number);
-                    }
+        function (feeds) {
+            if (!feeds) {
+                alert('Trouble getting RSS feed :(');
+                    return false;
+                }
+            object.feeds = feeds;
+        }, object.number);
+}
+
+function fillPeople(people, objects){
+    for(i=0;i<people.length;i++)console.log(objects[i]);
+    for(i=0;i<people.length*25;i++){
+        fillNth(objects[i%people.length], Math.floor(i/people.length), objects[i%people.length].where);
+    }
+}
+function checkFeedStatus(people){
+    for(i=0;i<people.length;i++)
+        if(objects[i].feeds==undefined){
+            setTimeout(function(){
+                checkFeedStatus(people);
+            }, 100);
+            return;
+        }
+    fillPeople(people, objects);
+}
+
