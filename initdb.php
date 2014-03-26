@@ -15,7 +15,7 @@
                        password VARCHAR(35) NOT NULL,
                        activate INT NOT NULL DEFAULT 0,
                        deactivate INT NOT NULL DEFAULT 0,
-                       fb_account VARCHAR(30) DEFAULT null,
+                       fb_account VARCHAR(300) DEFAULT null,
                        twitter_account VARCHAR(30) DEFAULT null);";
     mysqli_query($connect, $users_table) or die("cannot create table");
     $add_admin = "INSERT INTO users VALUES(1, 'admin', 'admin', 'admin@example.com', 'admin', md5('admin'), 1, 0, null, null);";
