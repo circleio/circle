@@ -36,18 +36,25 @@ function getUrlParameters(parameter, staticURL, decode){
     });
 })(jQuery);
 
+function makeAskRSSFeedUrl(username){
+    return 'http://ask.fm/feed/profile/'+username+'.rss';
+}
+
 function getAllUrlParameters(object){
-    object.url = 'http://ask.fm/feed/profile/'+getUrlParameters("name", "", true)+'.rss';
+    object.url = makeAskRSSFeedUrl(getUrlParameters("name", "", true));
     object.number = getUrlParameters("number", "", true);
     if(object.number==false)object.number = 25;
 }
 
 
 function fillNth(object, n, where){
-    if(n >= object.feeds.entries.length)return false;
+    if(object.feeds == undefined)
+        return false;
+    if(n >= object.feeds.entries.length)return true;
     entry = object.feeds.entries[n];
-    $('#'+where).append('<div style="padding-top: 10px"><img src="./static/images/askfm.png" align="right" style="height: 30px;"></div><section><div><a href='+"http://"+object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")"))+'><h4>'+object.feeds.title.replace(". Answers", "")+'</h4><h5><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</h5></a><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a><hr></div></section>');
-
+    console.log(entry);
+    $('#'+where).append('<div style="padding-top: 10px"><div><a href="http://ask.fm/"><img src="./static/images/askfm.png" align="left" style="width: 30px;"></img></a></div><div style="padding-left: 35px"><a href='+"http://"+object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")"))+'><h4>'+object.feeds.title.replace(". Answers", "")+'</h4><h5><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</h5></a><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a></div><hr></div>');
+    return true;
 }
 
 function fillMain(object){
