@@ -28,7 +28,7 @@ else {
 
     $data = array();
     for($x=0; $x<$notweets; $x++) {
-        $each_data = array('name' => $tweets[$x]->user->name, 'screen_name' => $tweets[$x]->user->screen_name, 'text' => $tweets[$x]->text);
+        $each_data = array('id' => (string)$tweets[$x]->id, 'name' => $tweets[$x]->user->name, 'screen_name' => $tweets[$x]->user->screen_name, 'text' => $tweets[$x]->text);
         array_push($data, $each_data);
     }
 
