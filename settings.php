@@ -19,7 +19,7 @@ if(!$access_token) {
 	echo "<script> fbConnected = false; </script>";
 } else {
 	echo "We have access token";
-	$result = file_get_contents("./api/validate_access_token.php?access_tokien=".$access_token);
+	$result = file_get_contents("http://127.0.0.1/htdocs/api/validate_access_token.php?access_token=".$access_token);
 	$result = json_decode($result);
 	print_r($result);
 }
