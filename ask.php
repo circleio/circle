@@ -29,12 +29,16 @@ window.onload = function(){
         objects[i].where = 'main';
         initializeFeed(objects[i]);
     }
-    for(i=0;i<people.length;i++)
-        fillMain(objects[i]);
+checkFeedStatus();
+    //for(i=0;i<people.length;i++)
+        //fillMain(objects[i]);
 }
 function fillPeople(){
-for(i=0;i<people.length*25;i++)
-        fillNth(objects[i%people.length], i/people.length, objects[i%people.length].where);
+	for(i=0;i<people.length;i++)console.log(objects[i]);
+for(i=0;i<people.length*25;i++){
+	//console.log(i%people.length, Math.floor(i/people.length))
+	fillNth(objects[i%people.length], Math.floor(i/people.length), objects[i%people.length].where);
+	}
 }
 function checkFeedStatus(){
     for(i=0;i<people.length;i++)

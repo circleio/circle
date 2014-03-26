@@ -1,4 +1,7 @@
 <?php
+    //debugging
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
     include 'dbconnect.php';
     $create_database = mysqli_select_db($connect, $dbname);
     if(!$create_database) {

@@ -16,7 +16,8 @@ function login() {
 	var xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                var response = JSON.parse(xmlhttp.responseText);
+                console.log(xmlhttp.responseText);
+		var response = JSON.parse(xmlhttp.responseText);
                 if(response.status == 0) {
                     username.style.border = '1px solid red';
                     password.style.border = '1px solid red';
@@ -27,9 +28,9 @@ function login() {
             }
         }
     var details = "username="+username.value+"&password="+password.value;
-	xmlhttp.open("POST", login_url /*+ '?username=' + username.value + '&password=' + password.value*/, true);
-	//xmlhttp.send();
-    xmlhttp.send(details);
+	xmlhttp.open("GET", login_url + '?username=' + username.value + '&password=' + password.value, true);
+	xmlhttp.send();
+    	//xmlhttp.send(details);
     }
 }
 function logout() {
