@@ -28,9 +28,10 @@ function login() {
             }
         }
     var details = "username="+username.value+"&password="+password.value;
-	xmlhttp.open("GET", login_url + '?username=' + username.value + '&password=' + password.value, true);
-	xmlhttp.send();
-    	//xmlhttp.send(details);
+	xmlhttp.open("POST", login_url, true);
+	//xmlhttp.send();
+    xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlhttp.send(details);
     }
 }
 function logout() {

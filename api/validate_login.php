@@ -4,8 +4,8 @@
 //ini_set('display_errors',1);
 //error_reporting(E_ALL);
 
-$username = $_GET['username'];
-$password = $_GET['password'];
+$username = $_POST['username'];
+$password = $_POST['password'];
 include '../dbconnect.php';
 mysqli_select_db($connect, $dbname) or die("cannot connect to database");
 $query = "SELECT * FROM users WHERE username='" . $username . "' AND password='" . md5($password) . "'";
