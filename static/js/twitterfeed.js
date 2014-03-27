@@ -1,6 +1,6 @@
 var twitter_url = window.location.href;
 var pos = twitter_url.lastIndexOf('/');
-twitter_url = twitter_url.substring(0, pos) + '/api/twitter/get_twitter.php';
+twitter_url = twitter_url.substring(0, pos) + '/api/twitter_get_timeline.php';
 var xmlhttp;
 xmlhttp=new XMLHttpRequest();
 xmlhttp.onreadystatechange=function() {
@@ -33,7 +33,7 @@ function retweet_id(tweet_id) {
 	    image.addEventListener('click', function() { destroy_tweet(tweet_id); });
 	}
     }
-    var url = 'api/twitter/retweet.php?id=' + tweet_id;
+    var url = 'api/twitter_retweet.php?id=' + tweet_id;
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
@@ -48,7 +48,7 @@ function destroy_tweet(tweet_id) {
 	    image.addEventListener('click', function() { retweet_id(tweet_id); });
 	}
     }
-    var url = 'api/twitter/destroy_tweet.php?id=' + tweet_id;
+    var url = 'api/twitter_destroy_tweet.php?id=' + tweet_id;
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
