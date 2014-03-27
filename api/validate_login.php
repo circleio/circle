@@ -15,7 +15,7 @@ if(mysqli_num_rows($result)==0) {
 }
 else {
     $row = mysqli_fetch_array($result);
-    $return_fields = array('first_name' => $row['first_name']);
+    $return_fields = array('first_name' => $row['first_name'], 'username' => $row['username']);
     $return_value = array('status' => 1, 'fields' => $return_fields);
     session_start();
     $_SESSION['first_name'] = $row['first_name'];
