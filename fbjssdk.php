@@ -94,13 +94,14 @@ set = setInterval(function() {
         }
 
     function removeFacebook() {
+	document.getElementById("removeButtonFB").innerHTML = "<img src='./static/images/loading.gif' width='40px'> </img> <br> Logging out of facebook";
 	FB.logout();
 	access_token = ""
 	uploadToServer();
     }
 
     function loginToFacebook() {
-	document.getElementById("loginbuttonfb").innerHTML = "<img src='./static/images/loading.gif' width='40px'> </img>";
+	document.getElementById("loginbuttonfb").innerHTML = "<img src='./static/images/loading.gif' width='40px'> </img> <br> Logging into facebook";
 	FB.login();
     }
 	

@@ -37,7 +37,7 @@ if(!$access_token) {
 					<h3> Facebook Account </h3>
 					<hr>
 			<div id="loginbuttonfb" style="display:block;"> <button class="btn btn-primary" type="button" onclick="loginToFacebook();" >Authorize Account</button>  </div> 
-	<div style="float:right;"> <button id="removeFacebook" onclick="removeFacebook();" style="display:none;"> Remove Facebook </button>  </div> 
+	<div style="float:right;" id="removeButtonFB"> <button id="removeFacebook" onclick="removeFacebook();" style="display:none;"> Remove Facebook </button>  </div> 
 				</div>
 			</div>
 		</div>
