@@ -13,6 +13,11 @@ require_once("twitter_twitteroauth.php"); //Path to twitteroauth library
     $query = "SELECT * FROM users WHERE id='" . $_SESSION['id'] . "' AND username='" . $_SESSION['username'] . "'";
     $response = mysqli_query($connect, $query);
     $row = mysqli_fetch_array($response);
+    if($row['twitter_username']==null || $row['twitter_token']==null || $row['twitter_token_secret']==null) {
+        $response = array('status' => 0);
+	echo json_encode($response);
+	return;
+    }
     $accesstoken = $row['twitter_token'];
     $accesstokensecret = $row['twitter_token_secret'];
     $twitteruser = $row['twitter_username'];
