@@ -29,12 +29,12 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
     } else if (response.status === 'not_authorized') {
 
 
-      FB.login(function(response) {}, {scope: 'read_stream'});
+//      FB.login(function(response) {}, {scope: 'read_stream'});
 
     } else {
 
 
-      FB.login(function(response) {}, {scope: 'read_stream'});
+  //    FB.login(function(response) {}, {scope: 'read_stream'});
 
     }
 
@@ -66,7 +66,8 @@ set = setInterval(function() {
 
         window.addEventListener("load", function() {    
                 setTimeout(function() {
-                        validateAccessToken();
+			if(access_token != undefined)
+        	                validateAccessToken();
                  },1);
         });
 
@@ -98,6 +99,9 @@ set = setInterval(function() {
 	uploadToServer();
     }
 
-
-
+    function loginToFacebook() {
+	document.getElementById("loginbuttonfb").innerHTML = "<img src='./static/images/loading.gif' width='40px'> </img>";
+	FB.login();
+    }
+	
     </script>
