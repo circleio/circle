@@ -5,20 +5,20 @@ if(!isset($_SESSION['username'])) {
 }
 include 'includes.php';
 include 'header.php';
-//include 'dbconnect.php';
+include 'dbconnect.php';
 
-//mysqli_select_db($connect, $dbname);
+mysqli_select_db($connect, $dbname);
 
 
-//$result = mysqli_query($connect, "SELECT fb_account from users where username = '$_SESSION[username]';");
-//$access_token = mysqli_fetch_assoc($result);
-//$access_token = $access_token[fb_account];
-//$user_info = array();
-//if(!$access_token) {
-//	echo "<script> fbConnected = false; access_token = undefined; </script>";
-//} else {
-//	echo "<script> access_token = \"$access_token\";  </script>";
-//}
+$result = mysqli_query($connect, "SELECT fb_account from users where username = '$_SESSION[username]';");
+$access_token = mysqli_fetch_assoc($result);
+$access_token = $access_token[fb_account];
+$user_info = array();
+if(!$access_token) {
+	echo "<script> fbConnected = false; access_token = undefined; </script>";
+} else {
+	echo "<script> access_token = \"$access_token\";  </script>";
+}
 
 ?>
 
