@@ -12,6 +12,9 @@ xmlhttp.onreadystatechange=function() {
             if(!response.data[i].retweeted) {
                 html_response += '<div class="row"><div class="col-lg-12"><img id="' + response.data[i].id + '"onClick="retweet_id(\'' + response.data[i].id + '\');" src="static/images/twitter_retweet.jpg" style="margin-top: 20px; width: 50px;"></div></div>';
 	    }
+	    else {
+                html_response += '<div class="row"><div class="col-lg-12"><img id="' + response.data[i].id + '"onClick="destroy_tweet(\'' + response.data[i].id + '\');" src="static/images/twitter_cancel_retweet.jpg" style="margin-top: 20px; width: 50px;"></div></div>';
+	    }
 	    html_response += '</div></div><hr>';
 	}
         $('#main').append(html_response);
@@ -24,10 +27,26 @@ function retweet_id(tweet_id) {
     xmlhttp.onreadystatechange=function() {
         if(xmlhttp.readyState==4 && xmlhttp.status==200) {
             var image = document.getElementById(tweet_id);
-            image.style.display="none";
+            image.src="static/images/twitter_cancel_retweet.jpg";
+	    image.onclick = null;
+	    image.addEventListener('click', function() { destroy_tweet(tweet_id); });
 	}
     }
     var url = 'api/twitter/retweet.php?id=' + tweet_id;
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+}
+function destroy_tweet(tweet_id) {
+    var xmlhttp=new XMLHttpRequest();
+    xmlhttp.onreadystatechange=function() {
+        if(xmlhttp.readyState==4 && xmlhttp.status==200) {
+            var image = document.getElementById(tweet_id);
+	    image.src="static/images/twitter_retweet.jpg";
+	    image.onclick = null;
+	    image.addEventListener('click', function() { retweet_id(tweet_id); });
+	}
+    }
+    var url = 'api/twitter/destroy_tweet.php?id=' + tweet_id;
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
