@@ -14,5 +14,6 @@ if(isset($access_token['oauth_token'])) {
     mysqli_query($connect, $query);
 }
 include '../includes.php';
-header('Location: ' . $BASE_URL);
+// Header location needs to be dynamic.
+header('Location: http://54.203.112.16/circle/settings.php');
 ?>
