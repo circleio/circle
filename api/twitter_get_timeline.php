@@ -2,7 +2,6 @@
 session_start();
 require_once("twitter_twitteroauth.php"); //Path to twitteroauth library
 
-else {
     if($_GET['count'])
         $notweets = $_GET['count'];
     else
@@ -34,5 +33,4 @@ else {
 
     $response = array('status' => 1, 'data' => $data);
     echo json_encode($response);
-}
 ?>
