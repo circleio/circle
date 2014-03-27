@@ -27,10 +27,23 @@ if(!$access_token) {
     <?php include 'fbjssdk.php'; ?>
     <div id="wrap">
         <div id="main" class="container clear-top">
-				<div id="loginbuttonfb" style="display:block;" class="fb-login-button" scope="read_stream" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>
         </div>
 
-	<div > <button id="removeFacebook" onclick="removeFacebook();" style="display:none;"> Remove Facebook </button>  </div>
+	<div class="row">
+		<div class="col-lg-1"> </div>
+		<div class="col-lg-10" id="facebook_account">
+			<div class="row">
+				<div class="col-lg-12">
+					<h3> Facebook Account </h3>
+					<hr>
+			<div id="loginbuttonfb" style="display:block;" class="fb-login-button" scope="read_stream" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div> 
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-1"> </div>
+	</div>
+			
+<!--	<div > <button id="removeFacebook" onclick="removeFacebook();" style="display:none;"> Remove Facebook </button>  </div> -->
         <div class="row">
             <div class="col-lg-1"></div>
 	    <div class="col-lg-10" id="twitter_account">
