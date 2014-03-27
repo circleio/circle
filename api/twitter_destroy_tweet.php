@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("twitteroauth.php"); //Path to twitteroauth library
+require_once("twitter_twitteroauth.php"); //Path to twitteroauth library
     $consumerkey = "UBHtHJkGEGwnbKPvjrsLA";
     $consumersecret = "apP8rNPgf6D86iRlRQ6HWXdSWiRldlFUnJikm9MIM8";
     include '../dbconnect.php';
