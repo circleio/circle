@@ -9,6 +9,6 @@ $oauth_token = $access_token['oauth_token'];
 $oauth_token_secret = $access_token['oauth_token_secret'];
 include '../dbconnect.php';
 mysqli_select_db($connect, $dbname) or die("cannot connect to database");
-$query = "UPDATE users SET twitter_token='" . $oauth_token . "' AND twitter_token_secret='" . $oauth_token_secret . "' WHERE id='" . $_SESSION['id'] . "'";
+$query = "UPDATE users SET twitter_token='" . $oauth_token . "', twitter_token_secret='" . $oauth_token_secret . "' WHERE id='" . $_SESSION['id'] . "'";
 mysqli_query($connect, $query);
 ?>
