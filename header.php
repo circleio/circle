@@ -15,7 +15,7 @@
 <ul class="nav navbar-nav navbar-right">
 <?php
 if($_SESSION['username']) {
-    echo '<li><a>Settings</a></li>' .
+    echo '<li><a href="http://54.203.112.16/circle/settings.php">Settings</a></li>' .
         '<li><a>' . $_SESSION['username'] . '</a></li>' .
         '<li><button type="submit" class="btn btn-link" onClick="logout();">LogOut</button></li>';
 }
