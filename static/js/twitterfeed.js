@@ -25,7 +25,7 @@ xmlhttp.onreadystatechange=function() {
         $('#main').append(html_response);
     }
 }
-xmlhttp.open("GET", twitter_url + '?username=sambuddhabasu', true);
+xmlhttp.open("GET", twitter_url, true);
 xmlhttp.send();
 function retweet_id(tweet_id) {
     var xmlhttp=new XMLHttpRequest();

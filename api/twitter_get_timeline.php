@@ -2,12 +2,7 @@
 session_start();
 require_once("twitter_twitteroauth.php"); //Path to twitteroauth library
 
-if(!$_GET['username']) {
-    $response = array('status' => 0);
-    echo json_encode($response);
-}
 else {
-    $twitteruser = $_GET['username'];
     if($_GET['count'])
         $notweets = $_GET['count'];
     else
@@ -21,7 +16,7 @@ else {
     $row = mysqli_fetch_array($response);
     $accesstoken = $row['twitter_token'];
     $accesstokensecret = $row['twitter_token_secret'];
- 
+    $twitteruser = $row['twitter_username'];
     function getConnectionWithAccessToken($cons_key, $cons_secret, $oauth_token, $oauth_token_secret) {
         $connection = new TwitterOAuth($cons_key, $cons_secret, $oauth_token, $oauth_token_secret);
         return $connection;

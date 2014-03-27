@@ -19,6 +19,7 @@
                        activate INT NOT NULL DEFAULT 0,
                        deactivate INT NOT NULL DEFAULT 0,
                        fb_account VARCHAR(30) DEFAULT null,
+                       twitter_username VARCHAR(50) DEFAULT null,
                        twitter_token VARCHAR(55) DEFAULT null,
                        twitter_token_secret VARCHAR(55) DEFAULT null);";
     mysqli_query($connect, $users_table) or die("cannot create table");
