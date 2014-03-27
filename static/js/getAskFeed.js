@@ -53,7 +53,8 @@ function fillNth(object, n, where){
     if(n >= object.feeds.entries.length)return true;
     entry = object.feeds.entries[n];
     //console.log(entry);
-    $('#'+where).append('<div class="row"><div class="col-lg-1"><div class="row"><div class="col-lg-12"><a><img src="static/images/askfm.png" style="width: 30px; margin-left: 35px; margin-top: 30px;"></a></div></div></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><a href="http://' + object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")")) + '"><h4>' + object.feeds.title.replace(". Answers", "") + '</h4></div></div><div class="row"><div class="col-lg-12"><h5><a href="' + entry.link + '">' + entry.title + '   (' + entry.publishedDate + ')</a></h5></div></div><div class="row"><div class="col-lg-12">' + entry.content.replace("\n", "<br>") + '</div></div></div><div class="col-lg-1"></div></div><hr>');
+    $('#'+where).append('<div class="row"><div class="col-lg-1"><div class="row"><div class="col-lg-12"><a><img src="static/images/askfm.png" style="width: 30px; margin-left: 35px; margin-top: 30px;"></a></div></div></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><a href="http://' + object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")")) + '"><h4>' + object.feeds.title.replace(". Answers", "") + '</h4></div></div><div class="row"><div class="col-lg-12"><h5><a href="' + entry.link + '">' + entry.title + '   (' + entry.publishedDate + ')</a></h5></div></div><div class="row"><div class="col-lg-12">' + entry.content.replace("\n", "<br>") + '</div></div><div class="fb-share-button" data-href="'+entry.link+'" data-type="button_count"></div></div></div></div><hr>');
+    //FB.XFBML.parse();
     return true;
 }
 
@@ -87,6 +88,7 @@ function fillPeople(people, objects){
     for(i=0;i<people.length*25;i++){
         fillNth(objects[i%people.length], Math.floor(i/people.length), objects[i%people.length].where);
     }
+    FB.XFBML.parse();
 }
 function checkFeedStatus(people){
     for(i=0;i<people.length;i++)

@@ -2,7 +2,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['username'])) {
-        header('Location: index.php');
+        //header('Location: index.php');
 }
 include 'includes.php';
 include 'header.php';
@@ -10,6 +10,7 @@ include 'header.php';
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="static/js/getAskFeed.js"></script>
+<script src="static/js/includeFB.js"></script>
 <script>
 var people = [
 {"name":"amoghbl1"},
@@ -35,11 +36,14 @@ window.onload = function(){
 </script>
 <div id="wrap">
     <div id="main" class="container clear-top">
+    <!--<div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-type="button_count"></div>-->
     </div>  
 </div>
 <head>
 </head>
-<div id="results"></div>
+<body>
+<div id="fb-root"></div>
+</body>
 <?php
 include 'footer.php';
 ?>

@@ -1,3 +1,4 @@
 *.swp
 dbconnect.php
 *.phar
+*.log
