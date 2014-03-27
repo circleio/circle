@@ -14,7 +14,7 @@ else {
         $notweets = 25;
     $consumerkey = "UBHtHJkGEGwnbKPvjrsLA";
     $consumersecret = "apP8rNPgf6D86iRlRQ6HWXdSWiRldlFUnJikm9MIM8";
-    include '../dbconnect';
+    include '../dbconnect.php';
     mysqli_select_db($connect, $dbname);
     $query = "SELECT * FROM users WHERE id='" . $_SESSION['id'] . "' AND username='" . $_SESSION['username'] . "'";
     $response = mysqli_query($connect, $query);
