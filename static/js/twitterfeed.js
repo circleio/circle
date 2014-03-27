@@ -8,12 +8,12 @@ xmlhttp.onreadystatechange=function() {
         var response = JSON.parse(xmlhttp.responseText);
         var html_response = '';
 	for(var i=0;i<response.data.length;i++) {
-            html_response += '<div class="row"><div class="col-lg-1"><img src="static/images/twitter.png" style="margin-top: 20px; width: 50px;"></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><span><a style="color: #fff; font-size: 3em;" href="https://twitter.com/' + response.data[i].screen_name + '">'+ response.data[i].name + '</a></span></div></div><div class="row"><div class="col-lg-12"><span style="font-size: 1.25em;" class="text-primary">' + response.data[i].text + '</span></div></div></div><div class="col-lg-1">';
+            html_response += '<div class="row"><div class="col-lg-1"><img src="static/images/twitter.png" style="margin-top: 20px; margin-left: 35px; width: 30px;"></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><h4><a style="color: #fff;" href="https://twitter.com/' + response.data[i].screen_name + '">'+ response.data[i].name + '</a></h4></div></div><div class="row"><div class="col-lg-12"><h5 class="text-primary">' + response.data[i].text + '</h5></div></div></div><div class="col-lg-1">';
             if(!response.data[i].retweeted) {
-                html_response += '<div class="row"><div class="col-lg-12"><img id="' + response.data[i].id + '"onClick="retweet_id(\'' + response.data[i].id + '\');" src="static/images/twitter_retweet.jpg" style="margin-top: 20px; width: 50px;"></div></div>';
+                html_response += '<div class="row"><div class="col-lg-12"><img id="' + response.data[i].id + '"onClick="retweet_id(\'' + response.data[i].id + '\');" src="static/images/twitter_retweet.jpg" style="margin-top: 20px; width: 30px;"></div></div>';
 	    }
 	    else {
-                html_response += '<div class="row"><div class="col-lg-12"><img id="' + response.data[i].id + '"onClick="destroy_tweet(\'' + response.data[i].id + '\');" src="static/images/twitter_cancel_retweet.jpg" style="margin-top: 20px; width: 50px;"></div></div>';
+                html_response += '<div class="row"><div class="col-lg-12"><img id="' + response.data[i].id + '"onClick="destroy_tweet(\'' + response.data[i].id + '\');" src="static/images/twitter_cancel_retweet.jpg" style="margin-top: 20px; width: 30px;"></div></div>';
 	    }
 	    html_response += '</div></div><hr>';
 	}
