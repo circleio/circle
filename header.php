@@ -10,17 +10,13 @@
 </div>
 <div class="navbar-collapse collapse navbar-responsive-collapse">
 <ul class="nav navbar-nav">
-<?php
-if($_SESSION['username']) {
-    echo '<li><a>Settings</a></li>';
-}
-?>
 <li><a>Contact Us</a></li>
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <?php
 if($_SESSION['username']) {
-    echo '<li><a>' . $_SESSION['username'] . '</a></li>' .
+    echo '<li><a>Settings</a></li>' .
+        '<li><a>' . $_SESSION['username'] . '</a></li>' .
         '<li><button type="submit" class="btn btn-link" onClick="logout();">LogOut</button></li>';
 }
 else {

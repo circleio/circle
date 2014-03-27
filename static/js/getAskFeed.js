@@ -53,7 +53,7 @@ function fillNth(object, n, where){
     if(n >= object.feeds.entries.length)return true;
     entry = object.feeds.entries[n];
     //console.log(entry);
-    $('#'+where).append('<div style="padding-top: 10px"><div><a href="http://ask.fm/"><img src="./static/images/askfm.png" align="left" style="width: 30px;"></img></a></div><div style="padding-left: 35px"><a href='+"http://"+object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")"))+'><h4>'+object.feeds.title.replace(". Answers", "")+'</h4><h5><a href="'+entry.link+'">'+entry.title+"  ("+entry.publishedDate+")"+'</h5></a><div id="answer">'+entry.content.replace("\n", "<br>")+'</div></a></div><hr></div>');
+    $('#'+where).append('<div class="row"><div class="col-lg-1"><div class="row"><div class="col-lg-12"><a><img src="static/images/askfm.png" style="width: 30px; margin-left: 35px; margin-top: 30px;"></a></div></div></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><a href="http://' + object.feeds.title.substring(object.feeds.title.indexOf("(")+1, object.feeds.title.indexOf(")")) + '"><h4>' + object.feeds.title.replace(". Answers", "") + '</h4></div></div><div class="row"><div class="col-lg-12"><h5><a href="' + entry.link + '">' + entry.title + '   (' + entry.publishedDate + ')</a></h5></div></div><div class="row"><div class="col-lg-12">' + entry.content.replace("\n", "<br>") + '</div></div></div><div class="col-lg-1"></div></div><hr>');
     return true;
 }
 
