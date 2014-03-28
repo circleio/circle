@@ -43,6 +43,7 @@
 		'info' => $result,
 	);
 	echo json_encode($result, JSON_PRETTY_PRINT);
-	
+
+	include 'upload_new_token.php';	
 ?>
 
