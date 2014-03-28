@@ -137,7 +137,7 @@ FB.getLoginStatus(function(response) {
  });
 }
   function showLoginButtonFB() {
-	document.getElementById("loginbuttonfb").innerHTML = "<button class="btn btn-primary" type="button" onclick="loginToFacebook();" >Authorize Account</button>";
+	document.getElementById("loginbuttonfb").innerHTML = "<button class=\"btn btn-primary\" type=\"button\" onclick=\"loginToFacebook();\"> Authorize Account </button>";
   }
 	
     </script>
