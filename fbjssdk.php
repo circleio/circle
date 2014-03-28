@@ -44,7 +44,7 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
 
 set = setInterval(function() {
 	if(typeof(access_token) == "string") {
-		hideLoginButtonFacebook();
+		validateAccessToken();
 		clearInterval(set);
 	}
 });
@@ -102,7 +102,37 @@ set = setInterval(function() {
 
     function loginToFacebook() {
 	document.getElementById("loginbuttonfb").innerHTML = "<img src='./static/images/loading.gif' width='40px'> </img> <br> Logging into facebook";
-	FB.login();
+	try {
+		FB.login(function() {}, {scope: "read_stream"});
+	} catch(err) {
+		FB.logout();
+		FB.login(function() {}, {scope: "read_stream"});
+	}
     }
+
+function onPageLoad() {
+
+FB.getLoginStatus(function(response) {
+
+  if (response.status === 'connected') {
+
+    var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+    uploadToServer(accessToken);
+
+  } else if (response.status === 'not_authorized') {
+
+    // the user is logged in to Facebook, 
+
+    // but has not authenticated your app
+
+  } else {
+
+    // the user isn't logged in to Facebook.
+
+  }
+
+ });
+}
 	
     </script>
