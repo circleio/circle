@@ -56,7 +56,7 @@ set = setInterval(function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                 json = JSON.stringify(eval("(" + xmlhttp.responseText + ")"));
                 json = JSON.parse(json);
-                if(json.valid) {
+                if(json.valid == "true") {
 		  hideLoginButtonFacebook();
 		} else {
 		 showLoginButtonFB();
