@@ -11,7 +11,7 @@
 
 	$access_token = trim($_REQUEST[access_token]);
 
-	if($access_token != "" || && $access_token != "undefined") {
+	if($access_token != "" && $access_token != "undefined") {
 
 	$appId = '420288881450005';
 
