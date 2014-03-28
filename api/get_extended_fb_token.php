@@ -6,7 +6,11 @@
 	$url = "https://graph.facebook.com/oauth/access_token?client_id=$appId&client_secret=$appSecret&grant_type=fb_exchange_token&fb_exchange_token=$access_token";
 
 	$result = file_get_contents($url);
+	$a = $result;
+	$a = explode('=',$a,2)[1];
 
-	echo $result;
+	$a = explode('&',$a,2)[0];
+
+	echo $a;
 
 ?>
