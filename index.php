@@ -82,7 +82,7 @@ include 'header.php';
        </div>
     </div>
 </div>
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="static/js/d3.v3.min.js" charset="utf-8"></script>
 <script src="static/js/circle.js"></script>
 <script src="static/js/signup.js"></script>
 <?php
