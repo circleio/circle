@@ -43,10 +43,11 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
 }
 
 set = setInterval(function() {
-	if(typeof(access_token) == "string") {
+//	if(typeof(access_token) == "string") {
+		console.log("validating current access_token");
 		validateAccessToken();
 		clearInterval(set);
-	}
+//	}
 });
       var json;
         function validateAccessToken() {
