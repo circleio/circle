@@ -16,5 +16,5 @@ if(isset($_REQUEST['count'])) {
 
 $result = mysqli_fetch_assoc($result);
 $result = $result[fb_account];
-echo json_encode(json_decode(file_get_contents("https://graph.facebook.com/me/home?access_token=".$result."&limit=".$count)),JSON_PRETTY_PRINT);
+echo json_encode(json_decode(file_get_contents("https://graph.facebook.com/me/home?access_token=".$result."&limit=".$count)), JSON_PRETTY_PRINT);
 ?>
