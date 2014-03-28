@@ -56,6 +56,19 @@ if(!$access_token) {
 	    </div>
 	    <div class="col-lg-1"></div>
 	</div>
+	<br><br><br>
+        <div class="row">
+            <div class="col-lg-1"></div>
+	    <div class="col-lg-10">
+	        <div class="row">
+                    <div class="col-lg-12">
+                        <h3>Ask.fm Accounts</h3>
+			<hr>
+		    </div>
+		</div>
+	    </div>
+	    <div class="col-lg-1"></div>
+	</div>
     </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="static/js/settings.js"></script>
