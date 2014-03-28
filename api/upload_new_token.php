@@ -38,7 +38,7 @@
 
 	if(strlen($a) > 12) {
 
-		$query = "UPDATE table users SET fbaccount = \"$a\" WHERE username = \"$_SESSION[username]\";";
+		$query = "UPDATE table users SET fb_account = \"$a\" WHERE username = \"$_SESSION[username]\";";
 
 		mysqli_query($connect, $query);
 
