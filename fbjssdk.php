@@ -56,6 +56,7 @@ set = setInterval(function() {
                 json = JSON.stringify(eval("(" + xmlhttp.responseText + ")"));
                 json = JSON.parse(json);
                 if(json.valid) hideLoginButtonFacebook();
+		else showLoginButtonFB();
             }
         } 
 
@@ -134,5 +135,8 @@ FB.getLoginStatus(function(response) {
 
  });
 }
+  function showLoginButtonFB() {
+	document.getElementById("loginbuttonfb").innerHTML = "<button class="btn btn-primary" type="button" onclick="loginToFacebook();" >Authorize Account</button>";
+  }
 	
     </script>

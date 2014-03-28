@@ -36,7 +36,7 @@ if(!$access_token) {
 				<div class="col-lg-12">
 					<h3> Facebook Account </h3>
 					<hr>
-			<div id="loginbuttonfb" style="display:block;"> <button class="btn btn-primary" type="button" onclick="loginToFacebook();" >Authorize Account</button>  </div> 
+			<div id="loginbuttonfb" style="display:block;"> <img src='./static/images/loading.gif' width='40px'> </img> <br> Fetching facebook info  </div> 
 	<div style="float:right;" id="removeButtonFB"> <button id="removeFacebook" onclick="removeFacebook();" style="display:none;"> Remove Facebook </button>  </div> 
 				</div>
 			</div>
