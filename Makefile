@@ -1,3 +1,7 @@
+.PHONY: refresh_database
+refresh_database:
+	php deletedb.php
+	php initdb.php
 .PHONY: init
 init:
 	php initdb.php
