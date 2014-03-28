@@ -23,6 +23,6 @@ if($result==null) {
 }
 $data = file_get_contents("https://graph.facebook.com/me/home?access_token=".$result."&limit=".$count);
 $response = array('status' => 1, 'data' => $data);
-echo json_encode($response);
+echo json_encode($response, JSON_PRETTY_PRINT);
 //echo json_encode(json_decode(file_get_contents("https://graph.facebook.com/me/home?access_token=".$result."&limit=".$count)), JSON_PRETTY_PRINT);
 ?>
