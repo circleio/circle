@@ -25,11 +25,10 @@
 
 	$a = $result;
 
-	$a = explode('=',$a,2)[1] or die("false");
+	$a = explode('=',$a,2)[1];
 
-	$a = explode('&',$a,2)[0] or die("false");
+	$a = explode('&',$a,2)[0];
 
-	echo $a;
 
 
 
@@ -44,8 +43,4 @@
 		mysqli_query($connect, $query);
 
 	}
-
-
-
-	echo "true";
 ?>
