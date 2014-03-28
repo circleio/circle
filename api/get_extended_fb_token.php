@@ -1,4 +1,10 @@
 <?php
+
+	session_start();
+	if(!isset($_SESSION['username'])) {
+		 header('Location: index.php');
+	}
+
 	$access_token = trim($_REQUEST[access_token]);
 	$appId = '420288881450005';
 	$appSecret = '39dd9707bb75b8bb0f8b54ed689eaea3';
@@ -7,10 +13,17 @@
 
 	$result = file_get_contents($url);
 	$a = $result;
-	$a = explode('=',$a,2)[1];
-
-	$a = explode('&',$a,2)[0];
-
+	$a = explode('=',$a,2)[1] or die("false");
+	$a = explode('&',$a,2)[0] or die("false");
 	echo $a;
+
+	include '../dbconnect.php';
+	mysqli_select_db($connect, $dbname);
+	if(strlen($a) > 12) {
+		$query = "UPDATE table users SET fbaccount = \"$a\" WHERE username = \"$_SESSION[username]\";";
+		mysqli_query($connect, $query);
+	}
+
+	echo "true";
 
 ?>
