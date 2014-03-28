@@ -27,7 +27,6 @@ if(!$access_token) {
     <?php include 'fbjssdk.php'; ?>
     <div id="wrap">
         <div id="main" class="container clear-top">
-        </div>
 
 	<div class="row">
 		<div class="col-lg-1"> </div>
@@ -36,14 +35,22 @@ if(!$access_token) {
 				<div class="col-lg-12">
 					<h3> Facebook Account </h3>
 					<hr>
-			<div id="loginbuttonfb" style="display:block;"> <img src='./static/images/loading.gif' width='40px'> </img> <br> Fetching facebook info  </div> 
-	<div style="float:right;" id="removeButtonFB"> <button id="removeFacebook" onclick="removeFacebook();" style="display:none;"> Remove Facebook </button>  </div> 
 				</div>
+			</div>
+			<div class="row">
+			    <div class="col-lg-12">
+			        <div id="loginbuttonfb" style="display:block;"><img src='./static/images/loading.gif' width='40px'> </img> <br>Fetching facebook info</div>
+			    </div>
+			</div>
+			<div class="row">
+			    <div class="col-lg-12">
+	                        <div id="removeButtonFB"><button id="removeFacebook" class="btn btn-primary" onclick="removeFacebook();" style="display:none;">Remove Facebook</button></div> 
+		            </div>
 			</div>
 		</div>
 		<div class="col-lg-1"> </div>
 	</div>
-			
+	<br><br><br>
         <div class="row">
             <div class="col-lg-1"></div>
 	    <div class="col-lg-10" id="twitter_account">
@@ -69,6 +76,7 @@ if(!$access_token) {
 	    </div>
 	    <div class="col-lg-1"></div>
 	</div>
+    </div>
     </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="static/js/settings.js"></script>

@@ -79,7 +79,7 @@ set = setInterval(function() {
 
 
         function hideLoginButtonFacebook() {
-                document.getElementById("loginbuttonfb").innerHTML = "Connected as "+ json.info.name + "<br>" + "<img src='http://graph.facebook.com/" + json.info.username + "/picture' />" ;
+                document.getElementById("loginbuttonfb").innerHTML = "<div class='row'><div class='col-lg-12'>Connected as "+ json.info.name + "</div></div><div class='row'><div class='col-lg-12'>" + "<img src='http://graph.facebook.com/" + json.info.username + "/picture' /></div></div>" ;
 		document.getElementById("removeFacebook").setAttribute("style", "display:block;");
 }
 
