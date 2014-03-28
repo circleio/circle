@@ -18,7 +18,7 @@
                        password VARCHAR(35) NOT NULL,
                        activate INT NOT NULL DEFAULT 0,
                        deactivate INT NOT NULL DEFAULT 0,
-                       fb_account VARCHAR(30) DEFAULT null,
+                       fb_account VARCHAR(300) DEFAULT null,
                        twitter_username VARCHAR(50) DEFAULT null,
                        twitter_token VARCHAR(55) DEFAULT null,
                        twitter_token_secret VARCHAR(55) DEFAULT null);";
