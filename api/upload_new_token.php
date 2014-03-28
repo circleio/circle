@@ -7,9 +7,11 @@
 
 	}
 
-
+	$a = "";
 
 	$access_token = trim($_REQUEST[access_token]);
+
+	if($access_token != "" || && $access_token != "undefined") {
 
 	$appId = '420288881450005';
 
@@ -29,7 +31,9 @@
 
 	$a = explode('&',$a,2)[0];
 
-
+} else {
+	$a = "";
+}
 
 
 	include '../dbconnect.php';
@@ -43,4 +47,5 @@
 		mysqli_query($connect, $query);
 
 	}
+	echo "HELLO";
 ?>
