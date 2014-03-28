@@ -29,12 +29,12 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
     } else if (response.status === 'not_authorized') {
 
 
-      FB.login(function(response) {}, {scope: 'read_stream'});
+//      FB.login(function(response) {}, {scope: 'read_stream'});
 
     } else {
 
 
-      FB.login(function(response) {}, {scope: 'read_stream'});
+  //    FB.login(function(response) {}, {scope: 'read_stream'});
 
     }
 
@@ -43,10 +43,11 @@ FB.Event.subscribe('auth.authResponseChange', function(response) {
 }
 
 set = setInterval(function() {
-	if(typeof(access_token) == "string") {
-		hideLoginButtonFacebook();
+//	if(typeof(access_token) == "string") {
+		console.log("validating current access_token");
+		validateAccessToken();
 		clearInterval(set);
-	}
+//	}
 });
       var json;
         function validateAccessToken() {
@@ -55,7 +56,11 @@ set = setInterval(function() {
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
                 json = JSON.stringify(eval("(" + xmlhttp.responseText + ")"));
                 json = JSON.parse(json);
-                if(json.valid) hideLoginButtonFacebook();
+                if(json.valid == "true") {
+		  hideLoginButtonFacebook();
+		} else {
+		 showLoginButtonFB();
+		}
             }
         } 
 
@@ -66,7 +71,8 @@ set = setInterval(function() {
 
         window.addEventListener("load", function() {    
                 setTimeout(function() {
-                        validateAccessToken();
+			if(access_token != undefined)
+        	                validateAccessToken();
                  },1);
         });
 
@@ -93,11 +99,48 @@ set = setInterval(function() {
         }
 
     function removeFacebook() {
+	document.getElementById("removeButtonFB").innerHTML = "<img src='./static/images/loading.gif' width='40px'> </img> <br> Logging out of facebook";
 	FB.logout();
 	access_token = ""
 	uploadToServer();
     }
 
+    function loginToFacebook() {
+	document.getElementById("loginbuttonfb").innerHTML = "<img src='./static/images/loading.gif' width='40px'> </img> <br> Logging into facebook";
+	try {
+		FB.login(function() {}, {scope: "read_stream"});
+	} catch(err) {
+		FB.logout();
+		FB.login(function() {}, {scope: "read_stream"});
+	}
+    }
 
+function onPageLoad() {
 
+FB.getLoginStatus(function(response) {
+
+  if (response.status === 'connected') {
+
+    var uid = response.authResponse.userID;
+    var accessToken = response.authResponse.accessToken;
+    uploadToServer(accessToken);
+
+  } else if (response.status === 'not_authorized') {
+
+    // the user is logged in to Facebook, 
+
+    // but has not authenticated your app
+
+  } else {
+
+    // the user isn't logged in to Facebook.
+
+  }
+
+ });
+}
+  function showLoginButtonFB() {
+	document.getElementById("loginbuttonfb").innerHTML = "<button class=\"btn btn-primary\" type=\"button\" onclick=\"loginToFacebook();\"> Authorize Account </button>";
+  }
+	
     </script>
