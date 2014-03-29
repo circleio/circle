@@ -9,8 +9,9 @@ xmlhttp.onreadystatechange=function() {
         var html_response = '';
         if(response.status) {
             window.twitterFeedLength = response.data.length;
+            window.twitterResponseData = response.data;
 	    for(var i=0;i<response.data.length;i++) {
-            putIthFeed(response.data[i], "#main");
+            //putIthFeed(response.data[i], "#main");
                 /*
                 html_response += '<div class="row"><div class="col-lg-1"><a href="https://twitter.com/"><img src="static/images/twitter.png" style="margin-top: 20px; margin-left: 35px; width: 30px;"></a></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><h4><a style="color: #fff;" href="https://twitter.com/' + response.data[i].screen_name + '">'+ response.data[i].name + '</a></h4></div></div><div class="row"><div class="col-lg-12"><h5 class="text-primary">' + response.data[i].text + '</h5></div></div></div><div class="col-lg-1">';
                 if(!response.data[i].retweeted) {

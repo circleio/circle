@@ -96,7 +96,7 @@ function fillPeople2(people, objects){
     for(i=0;i<people.length*25;i++){
         fillNth(objects[i%people.length], Math.floor(i/people.length), objects[i%people.length].where);
         if(ti < window.twitterFeedLength){
-            putIthfeed(window.twitterResponseData[ti], "#main");
+            putIthFeed(window.twitterResponseData[ti], "#main");
             ti = ti + 1;
         }
     }
