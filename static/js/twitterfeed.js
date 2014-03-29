@@ -8,6 +8,7 @@ xmlhttp.onreadystatechange=function() {
         var response = JSON.parse(xmlhttp.responseText);
         var html_response = '';
         if(response.status) {
+            window.twitterFeedLength = response.data.length;
 	    for(var i=0;i<response.data.length;i++) {
             putIthFeed(response.data[i], "#main");
                 /*

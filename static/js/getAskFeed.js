@@ -90,6 +90,18 @@ function fillPeople(people, objects){
     }
 }
 
+function fillPeople2(people, objects){
+    var ti = 0;
+    for(i=0;i<people.length;i++)console.log(objects[i]);
+    for(i=0;i<people.length*25;i++){
+        fillNth(objects[i%people.length], Math.floor(i/people.length), objects[i%people.length].where);
+        if(ti < window.twitterFeedLength){
+            putIthfeed(window.twitterResponseData[ti], "#main");
+            ti = ti + 1;
+        }
+    }
+}
+
 function checkFeedStatus(people){
     for(i=0;i<people.length;i++)
         if(objects[i].feeds==undefined){
@@ -98,6 +110,6 @@ function checkFeedStatus(people){
             }, 100);
             return;
         }
-    fillPeople(people, objects);
+    fillPeople2(people, objects);
 }
 
