@@ -10,16 +10,17 @@ xmlhttp.onreadystatechange=function() {
         html_response = '';
 	
 	for(var i=0; i<response.data.length; i++) {
+            if(response.data[i].picture) response.data[i].picture = response.data[i].picture.replace(/_s/, '_n');
 	    var shares = (response.data[i].shares)?("<strong> Shares </strong> &nbsp&nbsp&nbsp&nbsp" +response.data[i].shares.count):"";
 	    var likes = (response.data[i].likes)?(" <strong> Likes </strong> &nbsp&nbsp&nbsp&nbsp" +response.data[i].likes.data.length):"";
 	    var page_link = 'https://facebook.com/'+response.data[i].from.id;
 	    var link = (response.data[i].actions == undefined)?(response.data[i].link):(response.data[i].actions[0].link);
 	    if(response.data[i].type == "photo" && response.data[i].status_type == "added_photos") {
-		if(response.data[i].message == undefined) response.data[i].message = "<img src=\"" + response.data[i].picture + "\" />";
-		else response.data[i].message = response.data[i].message + "<br><br> <img src=\"" + response.data[i].picture + "\" />";
+		if(response.data[i].message == undefined) response.data[i].message = "<img width="200px" src=\"" + response.data[i].picture + "\" />";
+		else response.data[i].message = response.data[i].message + "<br><br> <img width="200px" src=\"" + response.data[i].picture + "\" />";
 	    } else if( response.data[i].type == "link" && response.data[i].status_type == "shared_story") {
-		if(response.data[i].message == undefined) response.data[i].message = "<img src=\"" + response.data[i].picture + "\" />";
-		else response.data[i].message = response.data[i].message + "<br><br> <img src=\"" + response.data[i].picture + "\" />";
+		if(response.data[i].message == undefined) response.data[i].message = "<img width="200px" src=\"" + response.data[i].picture + "\" />";
+		else response.data[i].message = response.data[i].message + "<br><br> <img width="200px" src=\"" + response.data[i].picture + "\" />";
 
 		if(response.data[i].name !=undefined) response.data[i].message += "<br><br> <h6>" + response.data[i].name + "</h6>";
 	    }
