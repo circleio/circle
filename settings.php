@@ -88,8 +88,11 @@ if(!$access_token) {
 function addToUsers(){
     var username = document.getElementById("ask-username");
     console.log(username.value);
-    $("#my-accounts").append("<div><div>"+username.value+"</div><div>"+"</div>"); 
+    $("#my-accounts").append("<div>"+username.value+"<img src='static/images/cross.png' width='25px' style='margin-left: 10px' click='deleteUser()'"+"</div>"); 
     username.value = "";
+}
+function deleteUser(){
+    console.log("deleting...");
 }
 </script>
 <?php
