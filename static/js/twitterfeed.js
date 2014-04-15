@@ -23,7 +23,6 @@ xmlhttp.onreadystatechange=function() {
 			html_response += '<div class="row"><div class="col-lg-1"></div><div class="col-lg-10"><div class="row"><div class="col-lg-12"><h4>To view your timeline, please setup your Twitter account in the Settings page.</h4></div></div></div><div class="col-lg-1"></div></div>';
 		}
 		$('#main').append(html_response);
-                FB.XFBML.parse();
 	}
 }
 xmlhttp.open("GET", twitter_url, true);
