@@ -71,6 +71,12 @@ if(!$access_token) {
                  <div class="col-lg-12">
                      <h3>Ask.fm Account(s)</h3>
                      <hr>
+                     <div class="form-group">
+                         <input type="text" id="ask-username" class="form-control col-lg-8" placeholder="Enter Username here..." style="width: 50%">
+                         <button type="button" class="btn btn-primary" style="margin-left: 10px" onclick="addToUsers()" >ADD</button>
+                     </div>
+                     <div id="my-accounts">
+                     </div>
                  </div>
              </div>
          <div class="col-lg-10"></div>
@@ -78,6 +84,14 @@ if(!$access_token) {
     </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="static/js/settings.js"></script>
+<script>
+function addToUsers(){
+    var username = document.getElementById("ask-username");
+    console.log(username.value);
+    $("#my-accounts").append("<div><div>"+username.value+"</div><div>"+"</div>"); 
+    username.value = "";
+}
+</script>
 <?php
 include 'footer.php';
 ?>
