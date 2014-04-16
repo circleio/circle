@@ -55,7 +55,12 @@ req.send();
 var storageArray = []
 
 function likeFacebookPost(post_id) {
-	if(document.getElementById(""+post_id).innerHTML == "Unlike") return unlikeFacebookPost(post_id);
+	if(document.getElementById(""+post_id).innerHTML == "Unlike") unlikeFacebookPost(post_id);
+
+	else  {
+
+	console.log("Liking");
+
 	xmlhttp = new XMLHttpRequest();
 	xmlhttp.onreadystatechange = function() {
 		if(xmlhttp.status == 200 && xmlhttp.readyState == 4) {
@@ -64,14 +69,18 @@ function likeFacebookPost(post_id) {
 	}
 	xmlhttp.open("GET", "https://graph.facebook.com/"+post_id+"/likes?access_token="+access_token+"&type=post&method=post", true);
 	xmlhttp.send();
+
+	}
 }
 
 
 function likedThePost(post_id) {
+	console.log("Liked");
 	document.getElementById(""+post_id).innerHTML = "Unlike";
 }
 
 function unlikeFacebookPost(post_id) {
+       console.log("Unliking");
        xmlhttp = new XMLHttpRequest();
        xmlhttp.onreadystatechange = function() {
        if(xmlhttp.status == 200 && xmlhttp.readyState == 4) {
@@ -86,5 +95,7 @@ function unlikeFacebookPost(post_id) {
 }
 
 function unlikedThePost(post_id) {
-	document.getElementById(""+post_id) = "<img src=\"https://cdn2.iconfinder.com/data/icons/business-icons-2-3/256/Best_Choice-32.png\" />";
+	document.getElementById(""+post_id).innerHTML = "<img src=\"https://cdn2.iconfinder.com/data/icons/business-icons-2-3/256/Best_Choice-32.png\" />";
+
+        console.log("Unliked");
 }
