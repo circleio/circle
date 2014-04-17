@@ -25,6 +25,7 @@ include 'header.php';
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="static/js/getAskFeed.js"></script>
 <script src="static/js/includeFB.js"></script>
+<script src="static/js/facebook_feed.js"></script>
 <script>
 var people = [
 {"name":"amoghbl1"},
