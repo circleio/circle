@@ -31,7 +31,7 @@ else {
     $to = $email;
     $subject = "Activate your CircleIO account!";
     $message = "Thank you for signing up with CircleIO. To activate your account, please click the link, http://54.203.112.16/circle/activate_account.php?code=" . md5($email);
-    mail($to, $subject, $message, "From: admin");
+    mail($to, $subject, $message, "From: ubuntu");
     $return_value = array('status' => 1, 'email' => $email);
 }
 echo json_encode($return_value);

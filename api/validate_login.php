@@ -8,7 +8,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 include '../dbconnect.php';
 mysqli_select_db($connect, $dbname) or die("cannot connect to database");
-$query = "SELECT * FROM users WHERE username='" . $username . "' AND password='" . md5($password) . "'";
+$query = "SELECT * FROM users WHERE username='" . $username . "' AND password='" . md5($password) . "' AND activated=1";
 $result = mysqli_query($connect, $query);
 if(mysqli_num_rows($result)==0) {
     $return_value = array('status' => 0);
