@@ -108,10 +108,10 @@ set = setInterval(function() {
     function loginToFacebook() {
 	document.getElementById("loginbuttonfb").innerHTML = "<img src='./static/images/loading.gif' width='40px'> </img> <br> Logging into facebook";
 	try {
-		FB.login(function() {}, {scope: "read_stream"});
+		FB.login(function() {}, {scope: "read_stream, publish_stream"});
 	} catch(err) {
 		FB.logout();
-		FB.login(function() {}, {scope: "read_stream"});
+		FB.login(function() {}, {scope: "read_stream, publish_stream"});
 	}
     }
 
