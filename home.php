@@ -18,6 +18,8 @@ include 'header.php';
 }(document, 'script', 'facebook-jssdk'));</script>
     <div id="main" class="container clear-top">
     </div>
+    <div id="twitter">
+    </div>
 </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="static/js/twitterfeed.js"></script>
