@@ -21,9 +21,6 @@ include 'header.php';
 </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="static/js/twitterfeed.js"></script>
-<script>
-FB.XFBML.parse();
-</script>
 <?php
 include 'footer.php';
 ?>
