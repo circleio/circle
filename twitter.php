@@ -16,7 +16,7 @@ include 'header.php';
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=420288881450005";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-    <div id="main" class="container clear-top">
+    <div id="twitter" class="container clear-top">
     </div>
 </div>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
