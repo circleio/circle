@@ -62,6 +62,10 @@ function signup() {
 		}
 		else {
                     console.log('Account created');
+                    var current_url = window.location.href;
+                    var pos = current_url.lastIndexOf('/');
+                    var redirect_url = current_url.substring(0, pos+1) + 'account_created.php';
+                    window.location.href = redirect_url;
 		}
             }
         }
