@@ -85,14 +85,17 @@ if(!$access_token) {
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="static/js/settings.js"></script>
 <script>
+var user = 0;
 function addToUsers(){
     var username = document.getElementById("ask-username");
     console.log(username.value);
-    $("#my-accounts").append("<div>"+username.value+"<img src='static/images/cross.png' width='25px' style='margin-left: 10px' click='deleteUser()'"+"</div>"); 
+    $("#my-accounts").append("<div id='user"+user+"'>"+username.value+"<img src='static/images/cross.png' width='25px' style='margin-left: 10px' onclick='deleteUser("+user+")'"+"</div>"); 
     username.value = "";
+    user++;
 }
-function deleteUser(){
-    console.log("deleting...");
+function deleteUser(u){
+    console.log(u);
+    $("#user"+u).hide();
 }
 </script>
 <?php
