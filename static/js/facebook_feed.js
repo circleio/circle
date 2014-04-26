@@ -12,7 +12,7 @@ xmlhttp.onreadystatechange=function() {
 	for(var i=0; i<response.data.length; i++) {
             if(response.data[i].picture) response.data[i].picture = response.data[i].picture.replace(/_s/, '_n');
 	    var shares = (response.data[i].shares)?("<strong> Shares </strong> &nbsp&nbsp&nbsp&nbsp" +response.data[i].shares.count):"";
-	    var likes = (response.data[i].likes)?(" <img src=\"https://cdn2.iconfinder.com/data/icons/business-icons-2-3/256/Best_Choice-32.png\" /> &nbsp&nbsp&nbsp" +response.data[i].likes.data.length):"";
+	    var likes = (response.data[i].likes)?(" <img src=\"https://cdn2.iconfinder.com/data/icons/business-icons-2-3/256/Best_Choice-32.png\" /> &nbsp&nbsp&nbsp" +response.data[i].likes.data.length):(" <img src=\"https://cdn2.iconfinder.com/data/icons/business-icons-2-3/256/Best_Choice-32.png\" /> &nbsp&nbsp&nbsp0");
 	    response.data[i].likess = likes;
 	    var page_link = 'https://facebook.com/'+response.data[i].from.id;
 	    var link = (response.data[i].actions == undefined)?(response.data[i].link):(response.data[i].actions[0].link);
